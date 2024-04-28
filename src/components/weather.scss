@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;500;700&display=swap");
+
+$color-primary: #333;
+$color-secondary: #666;
+$color-background: #ffffff;
+$color-hover: rgb(248, 249, 250);
+$color-active: rgb(253, 214, 99);
+$color-text: #f2f2f2;
+$color-gray: rgb(154, 160, 166);
+
+$font-family-primary: "Open sans", Helvetica, sans-serif;
+$font-family-secondary: Arial, Helvetica, sans-serif;
+$font-size-heading: 48px;
+$font-size-subheading: 22px;
+$font-size-text: 12px;
+$font-size-date: 16px;
+$font-size-forecast: 16px;
+$font-size-time: 12px;
+$font-size-temperature: 13px;
+
+.weather-component {
+  background-color: $color-background;
+  border-radius: 10px;
+  font-family: $font-family-secondary;
+  max-width: 682px;
+  padding: 20px;
+  width: auto;
+
+  .current-weather {
+    h2 {
+      color: $color-primary;
+      font-family: $font-family-primary;
+      font-size: $font-size-heading;
+      font-weight: 500;
+      line-height: 0.9;
+      margin: 0;
+    }
+
+    .weather-info {
+      align-items: flex-start;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: auto auto auto 1fr;
+      margin-top: 20px;
+
+      .weather-date {
+        justify-self: flex-end;
+        text-align: right;
+      }
+
+      img {
+        height: 50px;
+        width: 50px;
+      }
+
+      .weather-temperature {
+        display: flex;
+      }
+
+      div {
+        h4 {
+          color: $color-primary;
+          font-family: $font-family-primary;
+          font-size: $font-size-subheading;
+          font-weight: 500;
+          line-height: 1;
+          margin: 0;
+        }
+
+        p {
+          color: $color-secondary;
+          font-size: $font-size-text;
+          margin: 0;
+
+          &.date {
+            font-size: $font-size-date;
+          }
+        }
+      }
+    }
+  }
+
+  .weather-forecast {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    overflow-x: auto;
+
+    .forecast-item {
+      flex: 0 0 75px;
+      text-align: center;
+
+      p {
+        color: $color-primary;
+        font-size: $font-size-forecast;
+        margin: 0;
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+      }
+
+      .forecast-box {
+        margin-top: 8px;
+        padding: 8px 0;
+
+        &:hover {
+          background-color: $color-hover;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .forecast-time {
+        color: $color-gray;
+        font-size: $font-size-time;
+      }
+
+      .forecast-temperature {
+        font-size: $font-size-temperature;
+
+        span {
+          color: $color-gray;
+        }
+      }
+
+      &:first-child {
+        .forecast-box {
+          background-color: $color-hover;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .weather-tabs {
+    display: flex;
+    font-size: 14px;
+    gap: 10px;
+    justify-content: flex-start;
+    list-style: none;
+    margin-bottom: 4px;
+    padding: 10px 0;
+
+    span {
+      color: $color-text;
+      padding-top: 4px;
+    }
+
+    .tab {
+      color: $color-primary;
+      cursor: pointer;
+      padding: 4px 0;
+      text-align: center;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        border-bottom: 3px solid $color-active;
+      }
+    }
+  }
+}
